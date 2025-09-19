@@ -25,7 +25,9 @@ Nia is a **context-augmentation layer** that enhances coding agents with:
 
 ### Example: Using Nia in Cursor with Package and Documentation Search
 
-<iframe width="480" height="270" src="https://www.youtube.com/embed/NnxppAg4yBo?si=DuQHhbzE5CsxsdRc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+[![Watch the demo](https://img.youtube.com/vi/NnxppAg4yBo/0.jpg)](https://www.youtube.com/watch?v=NnxppAg4yBo)
+
+🎥 **[Watch Demo →](https://www.youtube.com/watch?v=NnxppAg4yBo)**
 
 </div>
 
