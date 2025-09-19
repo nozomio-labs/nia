@@ -1,0 +1,14 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 📖 Documentation
+    url: https://docs.trynia.ai
+    about: Check our comprehensive documentation for setup guides and API reference
+  - name: 🌐 Nia Website
+    url: https://trynia.ai
+    about: Learn more about Nia and its features
+  - name: 🔑 Get API Key
+    url: https://app.trynia.ai
+    about: Sign up and get your API key to start using Nia
+  - name: 💼 Enterprise Sales
+    url: mailto:arlan@nozomio.com
+    about: Contact our CEO for enterprise features, custom deployment, or SOC-2 compliance questions
