@@ -47,7 +47,7 @@ Description:
 [Detailed description of the vulnerability]
 
 Steps to Reproduce:
-1. [Step 1]
+1. [Step 1] 
 2. [Step 2]
 3. [Step 3]
 
