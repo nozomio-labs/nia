@@ -12,10 +12,11 @@ Nia is a context-augmentation layer that provides agents with an up-to-date know
 
 Nia is a **context-augmentation layer** that enhances coding agents with:
 
-- 🔍 **Deep Repository Understanding** - Index entire GitHub repositories for architectural context
-- 📚 **Documentation Integration** - Index and access any website or documentation
-- 🌐 **Package Search** - Execute grep across the source code of a public package, search package source using regex or semantic understanding, and read exact lines from a source file.
-- 🔧 **Universal Agent Support** - Works with Cursor, Claude Desktop, Continue, VS Code Cline, Windsurf, and any MCP-compatible tool
+- **Deep Repository Understanding** - Index entire GitHub repositories for architectural context
+- **Documentation Integration** - Index and access any website or documentation
+- **Package Search** - Execute grep across the source code of a public package, search package source using regex or semantic understanding, and read exact lines from a source file.
+- **Universal Agent Support** - Works with Cursor, Claude Desktop, Continue, VS Code Cline, Windsurf, and any MCP-compatible tool
+- **API** - Available as an API so you can enhance your own custom agents 24/7.
 
 ### Example: Using Nia in Cursor with Package and Documentation Search
 
@@ -77,16 +78,15 @@ Check out our [comprehensive setup guide](https://docs.trynia.ai) for:
 ### 📝 Report Issues
 Found a bug or have a feature request? We'd love to hear from you!
 
-- **🐛 [Report a Bug](../../issues/new?assignees=&labels=bug&template=bug_report.md)**
-- **✨ [Request a Feature](../../issues/new?assignees=&labels=enhancement&template=feature_request.md)**
-- **❓ [Ask a Question](../../issues/new?assignees=&labels=question&template=question.md)**
-- **💡 [General Feedback](../../issues/new?assignees=&labels=feedback&template=general_feedback.md)**
+- **[Report a Bug](../../issues/new?assignees=&labels=bug&template=bug_report.md)**
+- **[Request a Feature](../../issues/new?assignees=&labels=enhancement&template=feature_request.md)**
+- **[Ask a Question](../../issues/new?assignees=&labels=question&template=question.md)**
+- **[General Feedback](../../issues/new?assignees=&labels=feedback&template=general_feedback.md)**
 
 ### 📚 Resources
 
-- **📖 [Documentation](https://docs.trynia.ai)** - Complete setup guides and API reference
-- **🌐 [Website](https://trynia.ai)** - Learn more about Nia
-- **🔑 [Get API Key](https://app.trynia.ai)** - Start using Nia AI today
+- **[Documentation](https://docs.trynia.ai)** - Complete setup guides and API reference
+- **[Get API Key](https://app.trynia.ai)** - Start using Nia AI today
 
 ### 🏢 Enterprise Contact
 
@@ -102,15 +102,11 @@ Need enterprise features, custom deployment, or have questions about SOC-2 compl
 
 ## 📈 Pricing
 
-- **🆓 Free Tier** - Get started with 3 indexing jobs (no credit card required)
+- **Free Tier** - Get started with 3 indexing jobs (no credit card required)
 - **Solo developers** - $15/mo for extended solo usage
 - **Startups** - $50-100/mo/engineer for pretty much unlimited usage
-- **💼 Enterprise** - Unlimited usage, custom models, dedicated support, and local hosting options
+- **Enterprise** - Unlimited usage, custom models, dedicated support, and local hosting options
 - Contact us for custom pricing and enterprise features
-
-## ⚖️ License
-
-This repository (issue tracker and documentation) is open source. The Nia platform itself is proprietary software by Nozomio Labs.
 
 ---
 
