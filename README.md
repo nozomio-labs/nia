@@ -10,8 +10,6 @@ Nia is a context-augmentation layer that provides agents with an up-to-date know
 
 ## What is Nia?
 
-<div align="left" width="60%">
-
 Nia is a **context-augmentation layer** that enhances coding agents with:
 
 - 🔍 **Deep Repository Understanding** - Index entire GitHub repositories for architectural context
@@ -19,19 +17,15 @@ Nia is a **context-augmentation layer** that enhances coding agents with:
 - 🌐 **Package Search** - Execute grep across the source code of a public package, search package source using regex or semantic understanding, and read exact lines from a source file.
 - 🔧 **Universal Agent Support** - Works with Cursor, Claude Desktop, Continue, VS Code Cline, Windsurf, and any MCP-compatible tool
 
-</div>
-
-<div align="right" width="40%">
-
 ### Example: Using Nia in Cursor with Package and Documentation Search
+
+<div align="center">
 
 [![Watch the demo](https://img.youtube.com/vi/NnxppAg4yBo/0.jpg)](https://www.youtube.com/watch?v=NnxppAg4yBo)
 
 🎥 **[Watch Demo →](https://www.youtube.com/watch?v=NnxppAg4yBo)**
 
 </div>
-
-<div style="clear: both;"></div>
 
 ## ⚡ Quick Start
 
