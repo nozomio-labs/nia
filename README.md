@@ -1,22 +1,30 @@
-# Nia - Context Augmentation for Agents
+# Nia - Context for AI Agents
 
 [![Website](https://img.shields.io/badge/Website-trynia.ai-blue)](https://trynia.ai)
 [![Documentation](https://img.shields.io/badge/Docs-docs.trynia.ai-green)](https://docs.trynia.ai)
 [![Y Combinator](https://img.shields.io/badge/Y%20Combinator-S25-orange)](https://www.ycombinator.com/companies/nozomio)
+[![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da)](https://discord.gg/BBSwUMrrfn)
 
-> **Context-augmentation layer for agents, primarily designed for coding agents**
+> **Context layer for AI coding agents - backed by Y Combinator ($6.2M raised)**
 
-Nia is a context-augmentation layer that provides agents with an up-to-date knowledge base and improves their performance by 27%. This repository serves as the public issue tracker and community hub for Nia.
+Nia gives better context to coding agents. It reduces hallucinations by 43% by allowing agents to index any remote codebase, docs, or package. We continuously monitor and update sources automatically.
 
 ## What is Nia?
 
-Nia is a **context-augmentation layer** that enhances coding agents with:
+Nia is an **API layer** that provides agents with up-to-date, continuously monitored context from libraries, research papers, and technical documentation.
 
-- **Deep Repository Understanding** - Index entire GitHub repositories for architectural context
-- **Documentation Integration** - Index and access any website or documentation
-- **Package Search** - Execute grep across the source code of a public package, search package source using regex or semantic understanding, and read exact lines from a source file.
-- **Universal Agent Support** - Works with Cursor, Claude Desktop, Continue, VS Code Cline, Windsurf, and any MCP-compatible tool
-- **API** - Available as an API so you can enhance your own custom agents 24/7.
+**Core Capabilities:**
+
+- **Universal Search** - Sub-5s responses across millions of indexed pages and GitHub files
+- **Instant Package Search** - Search 3,000+ pre-indexed packages (PyPI, NPM, Crates.io, Go modules) - no indexing required
+- **Repository Indexing** - Index entire GitHub repositories for deep architectural understanding
+- **Documentation Integration** - Index and search any website or documentation
+- **Research Papers** - Index and search arXiv papers for academic context
+- **Oracle Research Agent** - Autonomous deep research across codebases and documentation
+- **Context Sharing** - Save conversation histories, plans, and decisions between different agents
+- **Local Folder Sync** - Sync local folders, databases, and chat history to Nia
+- **Auto-Sync** - Sources are continuously monitored and updated automatically
+- **API & MCP** - Available as an API or MCP server for any coding agent
 
 ### Example: Using Nia in Cursor with Package and Documentation Search
 
@@ -28,54 +36,76 @@ Nia is a **context-augmentation layer** that enhances coding agents with:
 
 </div>
 
-## ⚡ Quick Start
+## Quick Start
 
-### For Cursor Users (Under 2 minutes)
+### One-Command Install (Under 1 minute)
 
-1. **Get your API key** at [app.trynia.ai](https://app.trynia.ai) (3 indexing jobs free, no credit card needed)
+```bash
+npx nia-wizard@latest
+```
 
-2. **Install the MCP server:**
-   ```bash
-   pipx install nia-mcp-server
-   ```
+This wizard handles everything:
+- Creates your account or logs you in
+- Generates your API key automatically
+- Auto-detects and configures your IDE
+- Works for Cursor, VS Code, Claude Code, Windsurf, and 30+ other agents
 
-3. **Run setup:**
-   ```bash
-   pipx run --no-cache nia-mcp-server setup YOUR_API_KEY
-   ```
+**Alternative methods:**
+```bash
+pnpx nia-wizard@latest       # pnpm
+bunx nia-wizard@latest       # bun (fastest)
+yarn dlx nia-wizard@latest   # yarn
+```
 
-That's it! Restart Cursor and you're ready to go.
+### Supported Coding Agents
 
-### For Other Coding Assistants
+Nia works with **30+ coding agents** including:
 
-Check out our [comprehensive setup guide](https://docs.trynia.ai) for:
-- Windsurf
-- Claude Desktop
-- Continue
-- VS Code Cline
-- Any MCP-compatible tool
+| Agent | Agent | Agent |
+|-------|-------|-------|
+| Cursor | VS Code | Claude Code |
+| Windsurf | Cline | Continue.dev |
+| Claude Desktop | Zed | JetBrains AI |
+| OpenAI Codex | Copilot CLI | Gemini CLI |
+| Amazon Q | Roo Code | Kilo Code |
+| Qwen Coder | Mistral Vibe | And many more... |
 
-## 🔧 Core Features
+See our [full setup guide](https://docs.trynia.ai/integrations/nia-mcp) for all supported agents.
 
-### Repository
-- **Index GitHub repos** for instant code understanding
-- **Search codebases** using natural language queries
-- **Package search** through source code of any package
+## Core Features
 
-### Docs & Web Search
-- **Index documentation** from any website
-- **Natural language search** across indexed docs
-- **Intelligent discovery** of trending repositories and libraries
+### Package Search (No Indexing Required!)
+- **3,000+ pre-indexed packages** from PyPI, NPM, Crates.io, Go modules
+- **Regex search** (`nia_package_search_grep`) - find exact code patterns
+- **Semantic search** (`nia_package_search_hybrid`) - AI-powered understanding
+- **Read source files** - get complete context around snippets
+
+### Universal Indexing
+- **GitHub repositories** - index any public repo for deep code understanding
+- **Documentation sites** - index any website or docs
+- **Research papers** - index arXiv papers for academic context
+- **Local folders** - sync private folders, databases, and chat history
+
+### Search & Research
+- **Universal search** - query across all indexed sources with natural language
+- **Oracle Research Agent** - autonomous deep research across codebases and docs
+- **Deep Research Agent** - comprehensive multi-step analysis and comparisons
+- **Web search** - discover trending repos, libraries, and content
+
+### Context Management
+- **Context sharing** - save conversation histories and plans between agents
+- **Auto-sync** - sources are continuously monitored and updated
+- **Local sync** - sync local folders with privacy-first design
 
 ### Enterprise Ready
-- **SOC-2 compliant** with enterprise-grade security
+- **SOC-2 Type 1 Verified** with enterprise-grade security
 - **Local hosting options** for complete data sovereignty
 - **Unlimited usage** with dedicated support
-- **Custom models** and usage limits
+- **Custom infrastructure** and security options
 
-## 🤝 Community & Support
+## Community & Support
 
-### 📝 Report Issues
+### Report Issues
 Found a bug or have a feature request? We'd love to hear from you!
 
 - **[Report a Bug](../../issues/new?assignees=&labels=bug&template=bug_report.md)**
@@ -83,31 +113,39 @@ Found a bug or have a feature request? We'd love to hear from you!
 - **[Ask a Question](../../issues/new?assignees=&labels=question&template=question.md)**
 - **[General Feedback](../../issues/new?assignees=&labels=feedback&template=general_feedback.md)**
 
-### 📚 Resources
+### Resources
 
 - **[Documentation](https://docs.trynia.ai)** - Complete setup guides and API reference
-- **[Get API Key](https://app.trynia.ai)** - Start using Nia AI today
+- **[Get API Key](https://app.trynia.ai)** - Start using Nia today
+- **[Discord Community](https://discord.gg/BBSwUMrrfn)** - Join 1000+ engineers using Nia
+- **[API Reference](https://docs.trynia.ai/api-reference)** - Build custom agents with Nia API
 
-### 🏢 Enterprise Contact
+### Enterprise Contact
 
 Need enterprise features, custom deployment, or have questions about SOC-2 compliance?
 
 **Contact CEO:** [arlan@nozomio.com](mailto:arlan@nozomio.com)
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
-- **SOC-2 compliant** enterprise-grade security
+- **SOC-2 Type 1 Verified** enterprise-grade security
 - **No AI training** - Your data is never used to train external AI models
 - **Enterprise encryption** and secure data handling
+- **350+ exclusion patterns** protect sensitive files from being synced
 
-## 📈 Pricing
+## Pricing
 
-- **Free Tier** - Get started with 3 indexing jobs (no credit card required)
-- **Solo developers** - $15/mo for extended solo usage
-- **Startups** - $50-100/mo/engineer for pretty much unlimited usage
-- **Enterprise** - Unlimited usage, custom models, dedicated support, and local hosting options
-- Contact us for custom pricing and enterprise features
+| Plan | Price | Queries | Indexing | Features |
+|------|-------|---------|----------|----------|
+| **Free** | $0 | 50/month | 3 lifetime | Basic access |
+| **Pro** | $15/month | 1,000/month | 50/month | Deep Research, Oracle |
+| **Startup** | $50/engineer/month | 5,000/month | 150/month | Team features |
+| **Enterprise** | Custom | Unlimited | Unlimited | SOC-2, SLA, dedicated support |
+
+**Credit Packs** - Need more? Buy credits on-demand (from $3 for 100 credits).
+
+See [full pricing details](https://trynia.ai/#pricing) for credit costs per operation.
 
 ---
 
-**Made with ❤️ by [Nozomio Labs](https://nozomio.com) in San Francisco**
+**Made with care by [Nozomio Labs](https://nozomio.com) in San Francisco**
