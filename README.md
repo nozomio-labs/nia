@@ -135,16 +135,20 @@ Need enterprise features, custom deployment, or have questions about SOC-2 compl
 
 ## Pricing
 
-| Plan | Price | Queries | Indexing | Features |
-|------|-------|---------|----------|----------|
-| **Free** | $0 | 50/month | 3 lifetime | Basic access |
-| **Pro** | $15/month | 1,000/month | 50/month | Deep Research, Oracle |
-| **Startup** | $50/engineer/month | 5,000/month | 150/month | Team features |
-| **Enterprise** | Custom | Unlimited | Unlimited | SOC-2, SLA, dedicated support |
+| Feature | Free | Pro | Startup | Enterprise |
+|---------|------|-----|---------|------------|
+| **Price** | $0 | $15/month | $50/engineer/month | Custom |
+| **Queries** | 50/month | 1,000/month | 5,000/month | Unlimited |
+| **Web Searches** | 20/month | 200/month | 1,000/month | Unlimited |
+| **Package Search** | 50/month | Unlimited | Unlimited | Unlimited |
+| **Contexts** | 5 | 100 | 500 | Unlimited |
+| **Deep Research** | - | 30/month | 100/month | Unlimited |
+| **Oracle** | - | 30/month | 100/month | Unlimited |
+| **Indexing** | 3 lifetime | 50/month | 150/month | Unlimited |
 
-**Credit Packs** - Need more? Buy credits on-demand (from $3 for 100 credits).
+**Credit Packs** - Need more? Buy credits on-demand starting at $3 for 100 credits.
 
-See [full pricing details](https://trynia.ai/#pricing) for credit costs per operation.
+See [full pricing details](https://docs.trynia.ai/pricing) for credit costs per operation.
 
 ---
 
