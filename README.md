@@ -1,30 +1,38 @@
-# Nia - Context for AI Agents
+# Nia - Index Anything. Search It with AI.
 
 [![Website](https://img.shields.io/badge/Website-trynia.ai-blue)](https://trynia.ai)
 [![Documentation](https://img.shields.io/badge/Docs-docs.trynia.ai-green)](https://docs.trynia.ai)
 [![Y Combinator](https://img.shields.io/badge/Y%20Combinator-S25-orange)](https://www.ycombinator.com/companies/nozomio)
 [![Discord](https://img.shields.io/badge/Discord-Join%20Community-7289da)](https://discord.gg/BBSwUMrrfn)
 
-> **Context layer for AI coding agents - backed by Y Combinator ($6.2M raised)**
+> **Index docs, repos, PDFs, and datasets -- then search them with AI. Backed by Y Combinator ($6.2M raised)**
 
-Nia gives better context to coding agents. It reduces hallucinations by 43% by allowing agents to index any remote codebase, docs, or package. We continuously monitor and update sources automatically.
+Nia lets you index docs, repos, PDFs, datasets, spreadsheets, Slack, Google Drive, and more -- then gives your AI agent a search API to query them. Your agent gets real answers instead of hallucinations.
 
 ## What is Nia?
 
-Nia is an **API layer** that provides agents with up-to-date, continuously monitored context from libraries, research papers, and technical documentation.
+Nia is an **API layer** that gives agents up-to-date, continuously monitored context across repositories, documentation, PDFs, datasets, Slack, Google Drive, and local knowledge sources. It handles indexing, search, reading, research, and handoffs so agents can work from real source material instead of guesswork.
+
+You can use it with agents like Cursor or Claude Code as an MCP server, or build your own applications with the Nia API.
 
 **Core Capabilities:**
 
-- **Universal Search** - Sub-5s responses across millions of indexed pages and GitHub files
-- **Instant Package Search** - Search 3,000+ pre-indexed packages (PyPI, NPM, Crates.io, Go modules) - no indexing required
-- **Repository Indexing** - Index entire GitHub repositories for deep architectural understanding
-- **Documentation Integration** - Index and search any website or documentation
-- **Research Papers** - Index and search arXiv papers for academic context
+- **Universal Indexing** - Index GitHub repos, documentation sites, PDFs, arXiv papers, HuggingFace datasets, spreadsheets, and local folders
+- **Universal Search** - Sub-5s semantic search across all indexed sources
+- **Package Search** - Search 150M+ pre-indexed documents from PyPI, NPM, Crates.io, and Go modules -- no indexing required
+- **Document Agent** - Deploy an autonomous AI agent into any indexed PDF or document for deep research with cited answers
+- **Data Extraction** - Extract structured data from PDFs into JSON using custom schemas
+- **Tracer** - Search GitHub code without indexing using specialized sub-agents (Fast mode with Haiku, Deep mode with Opus)
 - **Oracle Research Agent** - Autonomous deep research across codebases and documentation
-- **Context Sharing** - Save conversation histories, plans, and decisions between different agents
-- **Local Folder Sync** - Sync local folders, databases, and chat history to Nia
+- **Context Sharing** - Save plans, discoveries, and conversation state between different agents
+- **Connectors** - Integrate Notion, Confluence, and other external sources via OAuth/API key
+- **Google Drive Integration** - Browse, select, index, and keep Drive content synced
+- **Slack Search** - Index Slack workspaces and search conversations semantically
+- **E2E Encryption** - Zero-knowledge sync for iMessage, WhatsApp, Apple Notes, Contacts, and more
+- **Local Sync** - Sync local folders, databases, and chat history with continuous monitoring
+- **Scoped MCP** - Create task-specific MCP surfaces for focused workflows
 - **Auto-Sync** - Sources are continuously monitored and updated automatically
-- **API & MCP** - Available as an API or MCP server for any coding agent
+- **API & MCP** - Available as an API or MCP server for any agent
 
 ### Example: Using Nia in Cursor with Package and Documentation Search
 
@@ -32,7 +40,7 @@ Nia is an **API layer** that provides agents with up-to-date, continuously monit
 
 [![Watch the demo](https://img.youtube.com/vi/NnxppAg4yBo/0.jpg)](https://www.youtube.com/watch?v=NnxppAg4yBo)
 
-🎥 **[Watch Demo →](https://www.youtube.com/watch?v=NnxppAg4yBo)**
+**[Watch Demo](https://www.youtube.com/watch?v=NnxppAg4yBo)**
 
 </div>
 
@@ -57,9 +65,9 @@ bunx nia-wizard@latest       # bun (fastest)
 yarn dlx nia-wizard@latest   # yarn
 ```
 
-### Supported Coding Agents
+### Supported Agents
 
-Nia works with **30+ coding agents** including:
+Nia works with **30+ agents** including:
 
 | Agent | Agent | Agent |
 |-------|-------|-------|
@@ -72,35 +80,73 @@ Nia works with **30+ coding agents** including:
 
 See our [full setup guide](https://docs.trynia.ai/integrations/nia-mcp) for all supported agents.
 
-## Core Features
+## Source Types
 
-### Package Search (No Indexing Required!)
-- **3,000+ pre-indexed packages** from PyPI, NPM, Crates.io, Go modules
-- **Regex search** (`nia_package_search_grep`) - find exact code patterns
-- **Semantic search** (`nia_package_search_hybrid`) - AI-powered understanding
-- **Read source files** - get complete context around snippets
+Nia can index and search across a wide range of knowledge sources:
 
-### Universal Indexing
-- **GitHub repositories** - index any public repo for deep code understanding
-- **Documentation sites** - index any website or docs
-- **Research papers** - index arXiv papers for academic context
-- **Local folders** - sync private folders, databases, and chat history
+| Source Type | How to Index | Notes |
+|-------------|-------------|-------|
+| **Code & Repositories** | `index` or Tracer | Grep, semantic search, file trees |
+| **Documentation Sites** | `index` on any URL | `llms.txt` aware, supports crawl filters |
+| **PDFs & Research Papers** | `index` on PDF/arXiv URL | Section-aware retrieval, Document Agent |
+| **HuggingFace Datasets** | `index` on dataset URL | Row-level search, schema discovery |
+| **Google Drive** | OAuth integration | Docs, Sheets, Slides, PDFs with incremental sync |
+| **Spreadsheets** | `index` CSV/TSV/XLSX/XLS | Row-aware, header-aware indexing |
+| **Slack** | Workspace integration | Real-time sync via Events API |
+| **X (Twitter)** | Account indexing | Semantic search over posts and threads |
+| **Local Folders** | `index(folder_path=...)` | Continuous sync available |
+| **Connectors** | Notion, Confluence, etc. | OAuth and API key auth with scheduled sync |
+| **E2E Encrypted** | TypeScript SDK | iMessage, WhatsApp, Notes, Contacts, Reminders |
 
-### Search & Research
-- **Universal search** - query across all indexed sources with natural language
-- **Oracle Research Agent** - autonomous deep research across codebases and docs
-- **Deep Research Agent** - comprehensive multi-step analysis and comparisons
-- **Web search** - discover trending repos, libraries, and content
+## Key Features
 
-### Context Management
-- **Context sharing** - save conversation histories and plans between agents
-- **Auto-sync** - sources are continuously monitored and updated
-- **Local sync** - sync local folders with privacy-first design
+### Document Agent
+Deploy an autonomous AI agent into any indexed PDF or document. It plans its own research strategy, navigates document structure, and produces answers with section-aware citations. Supports structured JSON output and streaming.
 
-### Enterprise Ready
-- **SOC-2 Type 1 Verified** with enterprise-grade security
-- **Local hosting options** for complete data sovereignty
-- **Unlimited usage** with dedicated support
+### Data Extraction
+Extract structured records from PDFs -- financial filings, invoices, spec sheets, engineering drawings. Three modes: table extraction, visual element detection, and engineering extraction.
+
+### Tracer
+Search GitHub code without indexing. Tracer delegates tasks to specialized sub-agents operating in parallel. **Fast mode** (Haiku) for quick lookups, **Deep mode** (Opus 1M context) for thorough investigations.
+
+### Package Search (No Indexing Required)
+Search 150M+ pre-indexed documents from PyPI, NPM, Crates.io, and Go modules. Regex and semantic search across public package source code.
+
+### Oracle Research Agent
+Autonomous deep research across codebases and documentation. Chains multiple searches and builds dynamic knowledge trees for complex questions.
+
+### Context Sharing
+Save plans, discoveries, edited files, and conversation state so another agent can pick up where you left off. Supports scratchpad, episodic, fact, and procedural memory types.
+
+### Connectors
+Integrate external data sources through a unified framework. Supports Notion, Confluence, and more with OAuth/API key authentication, scheduled syncing, and status monitoring.
+
+### E2E Encryption
+Zero-knowledge sync for personal data -- iMessage, WhatsApp, Apple Notes, Contacts, Reminders, Stickies, and Screenshots. Plaintext never leaves your device.
+
+## Use Cases
+
+Developers are building diverse applications with Nia's API:
+
+- **Community forum search** (Cursor Forum Search -- 5,000+ pages indexed)
+- **Knowledge base Q&A** (Paul Graham Essays, Naval Wisdom)
+- **Document archives** (Epstein Archive, legal research)
+- **Blog search** (Simon Willison's Weblog -- 4,500+ posts)
+- **Dataset exploration** (HuggingFace datasets)
+- **Code review agents** that fetch up-to-date documentation on demand
+- **Law research agents** indexing legal PDFs
+- **PDF book agents** for students and researchers
+- **Custom search engines** for any content
+
+See [trynia.ai/use-cases](https://trynia.ai/use-cases) for featured projects.
+
+## Enterprise Ready
+
+- **SOC-2 Compliance** for enterprise customers
+- **SLA Guarantees** with dedicated support
+- **Self-hosted deployment** for complete data sovereignty
+- **No AI training** -- your data is never used to train external models
+- **E2E encryption** and advanced data handling
 - **Custom infrastructure** and security options
 
 ## Community & Support
@@ -115,40 +161,65 @@ Found a bug or have a feature request? We'd love to hear from you!
 
 ### Resources
 
-- **[Documentation](https://docs.trynia.ai)** - Complete setup guides and API reference
+- **[Documentation](https://docs.trynia.ai)** - Complete setup guides, capabilities, and API reference
 - **[Get API Key](https://app.trynia.ai)** - Start using Nia today
-- **[Discord Community](https://discord.gg/BBSwUMrrfn)** - Join 1000+ engineers using Nia
+- **[Discord Community](https://discord.gg/BBSwUMrrfn)** - Join our community
 - **[API Reference](https://docs.trynia.ai/api-reference)** - Build custom agents with Nia API
 
 ### Enterprise Contact
 
 Need enterprise features, custom deployment, or have questions about SOC-2 compliance?
 
-**Contact CEO:** [arlan@nozomio.com](mailto:arlan@nozomio.com)
+**Contact Founders:** [founders@nozomio.com](mailto:founders@nozomio.com)
 
 ## Privacy & Security
 
-- **SOC-2 Type 1 Verified** enterprise-grade security
+- **SOC-2 Compliance** for enterprise customers
 - **No AI training** - Your data is never used to train external AI models
-- **Enterprise encryption** and secure data handling
+- **E2E encryption** available for sensitive personal data
+- **Data opt-out** from AI providers (Anthropic, OpenAI, Gemini) -- they do not store or train on your data
 - **350+ exclusion patterns** protect sensitive files from being synced
 
 ## Pricing
 
-| Feature | Free | Pro | Startup | Enterprise |
-|---------|------|-----|---------|------------|
-| **Price** | $0 | $15/month | $50/engineer/month | Custom |
-| **Queries** | 50/month | 1,000/month | 5,000/month | Unlimited |
-| **Web Searches** | 20/month | 200/month | 1,000/month | Unlimited |
-| **Package Search** | 50/month | Unlimited | Unlimited | Unlimited |
-| **Contexts** | 5 | 100 | 500 | Unlimited |
-| **Deep Research** | - | 30/month | 100/month | Unlimited |
-| **Oracle** | - | 30/month | 100/month | Unlimited |
-| **Indexing** | 3 lifetime | 50/month | 150/month | Unlimited |
+| Feature | Free | Builder | Team | Business | Enterprise |
+|---------|------|---------|------|----------|------------|
+| **Price** | $0 | $15/month | $50/seat/month | $99/seat/month | Custom |
+| **Queries** | 50/month | 1,000/month | 5,000/month | Unlimited | Unlimited |
+| **Web Searches** | 20/month | 200/month | 1,000/month | Unlimited | Unlimited |
+| **Package Search** | 50/month | Unlimited | Unlimited | Unlimited | Unlimited |
+| **Contexts** | 5 | 100 | 1,000 | Unlimited | Unlimited |
+| **Deep Research** | Credits only | 30/month | 200/month | Unlimited | Unlimited |
+| **Oracle** | Credits only | 30/month | 200/month | Unlimited | Unlimited |
+| **Tracer** | Credits only | 30/month (3 concurrent) | 200/month (10 concurrent) | Unlimited (50 concurrent) | Unlimited (100 concurrent) |
+| **Indexing** | 3 lifetime | 50/month | 500/month | Unlimited | Unlimited |
+| **Concurrent Indexes** | 1 | 5 | 50 | Unlimited | Unlimited |
+| **SOC 2** | - | - | - | - | Yes |
+| **SLA** | - | - | - | - | Yes |
+| **Dedicated Support** | - | - | - | Yes | Yes |
 
-**Credit Packs** - Need more? Buy credits on-demand starting at $3 for 100 credits.
+**Credit Packs** - Need more? Buy credits on-demand. Credits never expire.
 
-See [full pricing details](https://docs.trynia.ai/pricing) for credit costs per operation.
+| Pack | Credits | Price | Per Credit |
+|------|---------|-------|------------|
+| Starter | 100 | $3 | $0.030 |
+| Plus | 300 | $7 | $0.023 |
+| Developer | 1,000 | $18 | $0.018 |
+| Growth | 5,000 | $50 | $0.010 |
+| Scale | 30,000 | $149 | $0.005 |
+| Max | 100,000 | $499 | $0.005 |
+
+**Credit Costs per Operation:**
+
+| Operation | Credits |
+|-----------|---------|
+| Search & Context | 1 |
+| Indexing & Sync | 10 |
+| Deep Research | 10 |
+| Oracle | 15 |
+| Tracer | 15 |
+
+See [full pricing details](https://docs.trynia.ai/pricing) for more information.
 
 ---
 

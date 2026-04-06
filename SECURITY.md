@@ -103,4 +103,4 @@ We are currently evaluating a formal bug bounty program. For now:
 
 **Thank you for helping keep Nia and our community secure!**
 
-*Last updated: Sep 19, 2025*
+*Last updated: Apr 5, 2026*
